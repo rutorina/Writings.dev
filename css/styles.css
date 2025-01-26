@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap");
+/* RESETS */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+/* VARIABLES */
+:root {
+  /* FONTS */
+  --FF: "Recursive", serif;
+  --FS: clamp(1rem, 2.2vh, 1.5rem);
+  --POST-FF: "Poppins", serif;
+  --MENU-FS: clamp(0.6rem, 2.2vh, 1rem);
+  --HEADER-FS: clamp(1rem, 2.2vh, 2rem);
+  /* COLORS */
+  --BGCOLOR: #232830;
+  --COLOR: #fff;
+  --HIGHLIGHT-COLOR: #ff7575;
+  --FOOTER-HIGHLIGHT-COLOR: #4699e0;
+  --TAB-ACTIVE-COLOR: #ff7575;
+  --TAB-COLOR: #909090;
+  --TAB-FADE-COLOR: hsla(0, 0%, 56%, 0.034);
+  --BORDER-COLOR: hsla(0, 0%, 30%, 0.2);
+  --CARD-BGCOLOR: #fff;
+  --CARD-COLOR: #000;
+
+  /* STANDART PADDING */
+  --PADDING-TB: clamp(1em, 2.5vh, 1.5em);
+  --PADDING-SIDE: 6%;
+  --PADDING-GLOBAL-TB: 2.5%;
+  --PADDING-GLOBAL-SIDE: 5%;
+
+  /* STANDART MARGIN */
+  --MARGINE: clamp(1em, 2.5vh, 1.5em) 0;
+  --MARGINE-BOTTOM: 1.5em;
+}
+
+/* UTILITY CLASSES */
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.inline {
+  display: inline;
+}
+
+/* GLOBAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--MAIN-FF);
+  background-color: var(--BGCOLOR);
+  color: var(--COLOR);
+  place-content: center;
+}
+
+body {
+  font-family: var(--FF);
+  color: var(--MAIN-COLOR);
+  min-height: 100vh;
+  width: 100%;
+  /* padding: var(--PADDING-GLOBAL-TB) var(--PADDING-GLOBAL-SIDE); */
+}
+
+h1 {
+  font-family: var(--FF);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--HIGHLIGHT-COLOR);
+}
+
+p {
+  line-height: 1.5;
+}
+
+a:any-link {
+  color: var(--COLOR);
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--HIGHLIGHT-COLOR);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding: var(--PADDING-GLOBAL-TB) var(--PADDING-GLOBAL-SIDE);
+}
+
+/* HEADER */
+
+.header {
+  color: var(--COLOR);
+  margin-bottom: var(--MARGINE-BOTTOM);
+}
+
+.header__nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+  font-size: var(--MENU-FS);
+}
+
+.header__name {
+  font-size: var(--HEADER-FS);
+  font-weight: 700;
+}
+
+/* HERO */
+
+.hero {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--MARGINE-BOTTOM);
+  color: var(--COLOR);
+}
+
+.hero__image {
+  /* width: 20%; */
+  /* height: auto; */
+  margin-left: 4%;
+  margin-bottom: 2rem;
+}
+
+.hero__header {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--HIGHLIGHT-COLOR);
+  margin-bottom: 0.5rem;
+  line-height: 1.5em;
+}
+
+/* .hero__text {
+  font-size: var(--FS);
+} */
+
+/* MENU */
+
+.menu {
+  color: var(--TAB-COLOR);
+  margin-bottom: var(--MARGINE-BOTTOM);
+  border-top: 2px solid var(--BORDER-COLOR);
+  font-size: var(--MENU-FS);
+}
+
+.menu__ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu__item {
+  cursor: pointer;
+}
+.menu__item:hover,
+.menu__item:active,
+.menu__item:focus {
+  color: var(--HIGHLIGHT-COLOR);
+}
+
+.menu__item:last-child {
+    background: linear-gradient(to right, var(--TAB-COLOR) 35%, var(--TAB-FADE-COLOR) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* GRID VIEW BUTTON */
+
+.button-grid {
+  background-image: url("/images/grid.png");
+}
+
+.button-grid:hover,
+.button-grid:active,
+.button-grid:focus {
+  background-image: url("/images/grid_highlight.png");
+}
+
+/* LIST VIEW BUTTON */
+
+.button-list {
+  background-image: url("/images/view.png");
+}
+
+.button-list:hover,
+.button-list:active,
+.button-list:focus {
+  background-image: url("/images/view_highlight.png");
+}
+
+/* MENU BUTTONS */
+.menu__view {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu__button-view {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0;
+}
+
+/* POST CARDS */
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(30%, 390px, 50%), 1fr));
+
+  gap: 2rem;
+  margin-bottom: var(--MARGINE-BOTTOM);
+  font-family: var(--POST-FF);
+}
+
+.post__card {
+  background-color: var(--CARD-BGCOLOR);
+  padding: var(--PADDING-TB);
+  color: var(--CARD-COLOR);
+  border-radius: 5%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.post__main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.post__image {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+  margin-bottom: 1rem;
+}
+
+.post__footer {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+
+/* TABS */
+
+.tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab__ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: clamp(0.3rem, 2.5vw, 1.5rem);
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--TAB-COLOR);
+  font-style: italic;
+}
+
+.tab {
+  padding-top: var(--PADDING-TB);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.tab:hover,
+.tab:active,
+.tab:focus {
+  color: var(--TAB-ACTIVE-COLOR);
+}
+
+.tab__highlight {
+  color: var(--TAB-ACTIVE-COLOR);
+  border-top: 3px solid var(--TAB-ACTIVE-COLOR);
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: var(--COLOR);
+  border-top: 2px solid var(--BORDER-COLOR);
+}
+
+.highlight {
+  background-color: var(--FOOTER-HIGHLIGHT-COLOR);
+  padding: 0.1rem 0.7rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+.twitter_bird {
+  position: relative;
+  top: 5px;
+}
